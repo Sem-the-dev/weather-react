@@ -8,6 +8,7 @@ let[message, setMessage] = useState("")
     function updateCity(event){
     event.preventDefault();
     setCity(event.target.value);
+    return (city)
     }
 
     function insertData(event){
@@ -19,7 +20,35 @@ let[message, setMessage] = useState("")
     
     function getWeather(response){
     setMessage(
-      console.log(`the weather is ${response.data.main.temp}`)
+      <div>
+        <h1>
+          {response.data.name}
+        </h1>
+        <h2>
+          Sunny
+        </h2>
+        <p>
+          Last updated: Monday at 9am
+        </p>
+       
+      <p>
+      {Math.round(response.data.main.temp)}°
+      <br/>
+        H: {Math.round(response.data.main.temp_max)}°
+        L: {Math.round(response.data.main.temp_min)}°
+      </p>
+      <p>
+        Feels like: {Math.round(response.data.main.feels_like)}°
+        <br />
+        Windspeed: {Math.round(response.data.wind.speed)} kph or mph
+        <br />
+        Humidity: {response.data.main.humidity}%
+        <br/>
+        Sunrise:07:00
+        <br/>
+        Sunset: 16:00
+    </p>
+      </div>
     );
     }
 
