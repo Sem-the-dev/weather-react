@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import SearchTools from './SearchTools.css';
 
 export default function SearchTool(props){
 let[city, setCity] = useState("");
@@ -21,23 +22,25 @@ let[message, setMessage] = useState("")
     function getWeather(response){
     setMessage(
       <div>
-        <h1>
+        <h1 className="City">
           {response.data.name}
         </h1>
-        <h2>
+        <h2 className="WeatherDescription">
           Sunny
         </h2>
-        <p>
+        <p className="LastUpdated">
           Last updated: Monday at 9am
         </p>
        
-      <p>
+      <p className="CurrentTemperature">
       {Math.round(response.data.main.temp)}°
+      </p>
       <br/>
+      <p className="HighLowTemp">
         H: {Math.round(response.data.main.temp_max)}°
         L: {Math.round(response.data.main.temp_min)}°
       </p>
-      <p>
+      <p className="WeatherDetails">
         Feels like: {Math.round(response.data.main.feels_like)}°
         <br />
         Windspeed: {Math.round(response.data.wind.speed)} kph or mph
@@ -53,13 +56,30 @@ let[message, setMessage] = useState("")
     }
 
 return (
-<div>
+<div className="container"> 
     <form onSubmit={insertData}>
-     <input type="search" placeholder="Type a city..." onChange={updateCity}/>
-     <input type="submit" value="Search" />
-     <input type="submit" value="Here" />
+    <div className="row search">
+    <div className="col-6">
+     <input type="search" placeholder="Type a city..." class="form-control" onChange={updateCity}/>
+    </div>
+    <div className="col-2 search-button">
+     <input type="submit" value="Search" class="btn btn-outline-dark"/>
+    </div>
+
+    <div className="col-2 search-button">
+     <input type="submit" value="Here" class="btn btn-outline-dark"/>
+    </div>
+    <div className="col-2 btn-group btn-group-toggle" data-toggle="buttons">
+     <label class="btn btn-outline-dark">
+      <input type="radio" name="options" id="fahrenheit-bttn" autocomplete="off"/> °F
+    </label>
+    <label class="btn btn-outline-dark">
+    <input type="radio" name="options" id="celsius-bttn" autocomplete="off" checked/> °C
+    </label>
+     </div>
+     </div>
     </form>
-   <div> <h2>{message}</h2></div>
+   <div>{message}</div>
       </div> )
     
 }

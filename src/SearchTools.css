@@ -1,0 +1,42 @@
+.WeatherDescription {
+  font-family: "Inconsolata", monospace;
+}
+
+.City {
+  font-size: 70px;
+  margin: 0px;
+  font-family: "Inconsolata", monospace;
+}
+
+.LastUpdated {
+  font-size: 15px;
+  font-family: "Inconsolata", monospace;
+}
+
+.CurrentTemperature {
+  font-size: 100px;
+  margin-top: -50px;
+  margin-bottom: 0px;
+  text-align: center;
+  font-family: "Share Tech Mono", monospace;
+  color: #393e46;
+}
+
+.HighLowTemp {
+  font-size: 20px;
+  margin: 10px 0 30px;
+  text-align: center;
+  font-family: "Share Tech Mono", monospace;
+  color: #393e46;
+}
+
+.WeatherDetails {
+  padding: 30px 0;
+  line-height: 45px;
+  margin: auto;
+  font-size: 15px;
+  font-family: "Inconsolata", monospace;
+  display: block;
+  color: #393e46;
+  text-align: center;
+}
