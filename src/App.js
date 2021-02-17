@@ -1,6 +1,8 @@
+import React from 'react';
 import './App.css';
 import SearchTool from './SearchTool';
 import Footer from './Footer';
+import Forecast from './Forecast';
 
 
 function App() {
@@ -14,7 +16,9 @@ function App() {
         }}
       >
       
-         <SearchTool />
+      <SearchTool />
+      <Forecast />
+    
       <Footer />
       </div>
     </div>

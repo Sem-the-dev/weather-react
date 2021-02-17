@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import SearchTools from './SearchTools.css';
+import ReactAnimatedWeather from 'react-animated-weather';
+
 
 export default function SearchTool(props){
 let[city, setCity] = useState("");
@@ -31,7 +33,12 @@ let[message, setMessage] = useState("")
         <p className="LastUpdated">
           Last updated: Monday at 9am
         </p>
-       
+        <ReactAnimatedWeather
+    icon="CLEAR_DAY"
+    color="gray"
+    size={200}
+    animate={true}
+  />
       <p className="CurrentTemperature">
       {Math.round(response.data.main.temp)}°
       </p>
