@@ -2,11 +2,11 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import SearchTools from './SearchTools.css';
 import ReactAnimatedWeather from 'react-animated-weather';
-
+import Loader from "react-loader-spinner";
 
 export default function SearchTool(props){
-let[city, setCity] = useState("");
-let[message, setMessage] = useState("")
+const[city, setCity] = useState("");
+const[message, setMessage] = useState("")
 
     function updateCity(event){
     event.preventDefault();
@@ -59,9 +59,80 @@ let[message, setMessage] = useState("")
         <br/>
         Sunset: 16:00
     </p>
-      </div>
-    );
-    }
+      
+<div className="row hourly-weather">
+<div className="col">
+15:00
+<br/>
+  <ReactAnimatedWeather
+    icon="CLEAR_DAY"
+    color="gray"
+    size={50}
+    animate={true}
+  />
+<br/>
+H:21° 
+L:17°
+</div> 
+<div className="col">
+18:00
+<br/>
+ <ReactAnimatedWeather
+    icon="PARTLY_CLOUDY_DAY"
+    color="gray"
+    size={50}
+    animate={true}
+  />
+<br/>
+H:21° 
+L:17°
+</div> 
+<div className="col">
+21:00
+<br/>
+ <ReactAnimatedWeather
+    icon="PARTLY_CLOUDY_NIGHT"
+    color="gray"
+    size={50}
+    animate={true}
+  />
+<br/>
+H:21° 
+L:17°
+</div> 
+<div className="col">
+00:00
+<br/>
+ <ReactAnimatedWeather
+    icon="RAIN"
+    color="gray"
+    size={50}
+    animate={true}
+  />
+<br/>
+H:21° 
+L:17°
+</div> 
+<div className="col">
+03:00
+<br/>
+ <ReactAnimatedWeather
+    icon="RAIN"
+    color="gray"
+    size={50}
+    animate={true}
+  />
+<br/>
+H:21° 
+L:17°
+</div> 
+</div> 
+</div> 
+ )
+;
+}
+
+    
 
 return (
 <div className="container"> 
@@ -88,6 +159,7 @@ return (
      </div>
     </form>
    <div>{message}</div>
-      </div> )
-    
-}
+      </div> 
+)
+
+} 

@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 import SearchTool from './SearchTool';
-import Footer from './Footer';
-import Forecast from './Forecast';
+import Footer from './Footer'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Loader from "react-loader-spinner";
 
 
 function App() {
@@ -13,10 +13,11 @@ function App() {
      <div style={{
           backgroundImage: "url(./images/hues-of-red-and-blue.jpg)",
           backgroundPosition: "auto",
-          backgroundSize: "3000px" }} >
-      
+          backgroundSize: "fit-content" }} >
       <SearchTool />
-      <Forecast />
+      
+      <Loader type="BallTriangle" color="gray" height={150} width={150} />
+      
       <Footer />
       </div>
       </div>

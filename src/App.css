@@ -1,11 +1,10 @@
 .App {
   text-align: center;
-  max-width: fit-content
+  max-width: fit-content;
 }
 
-.container{
+.container {
   padding: 0px;
-  margin: auto;
 }
 
 @media (prefers-reduced-motion: no-preference) {

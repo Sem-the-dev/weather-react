@@ -1,9 +1,9 @@
-.container .search {
+.searchTool .search {
   text-align: center;
   padding: 40px;
   position: relative;
 }
-.container .search-button {
+.searchTool .search-button {
   padding: 0px;
   position: relative;
   text-align: left;
@@ -69,4 +69,16 @@ input {
   display: block;
   color: #393e46;
   text-align: center;
+}
+
+.hourly-weather {
+  text-align: center;
+  list-style-type: none;
+  padding: 40px 0px 0px;
+  line-height: 30px;
+  margin: auto;
+  font-family: monospace;
+  font-size: 14px;
+  color: #393e46;
+  display: flex;
 }
