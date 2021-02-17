@@ -7,12 +7,12 @@ export default function Footer() {
       <p>
         {" "}
         👩🏾‍💻 Open-source code by:{" "}
-        <a href="https://github.com/Sem-the-dev/weather-app-2020">
+        <a href="https://github.com/Sem-the-dev/weather-react">
           Semhar Tesfu
         </a>
         <br />
         💻 Hosted on:{" "}
-        <a href="https://dreamy-mccarthy-bfff51.netlify.app/">Netlify</a>
+        <a href="https://serene-noyce-0f2ef9.netlify.app/">Netlify</a>
         <br />
         📸 Photo by:
         <a href="https://www.pexels.com/photo/white-clouds-and-blue-sky-907485/">
