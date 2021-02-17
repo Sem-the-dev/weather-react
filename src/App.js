@@ -1,16 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
 import SearchTool from './SearchTool';
+import Footer from './Footer';
+
 
 function App() {
   return (
     <div className="App">
-     
-      <header className="App-header">
-         <SearchTool />
-         <img src={logo} className="App-logo" alt="logo" />
-      </header>
+     <div
+        style={{
+          backgroundImage: "url(./images/hues-of-red-and-blue.jpg)",
+          backgroundPosition: "auto",
+          backgroundSize: "3000px"
+        }}
+      >
       
+         <SearchTool />
+      <Footer />
+      </div>
     </div>
   );
 }
