@@ -1,9 +1,12 @@
 .App {
   text-align: center;
+  max-width: fit-content
 }
 
-
-
+.container{
+  padding: 0px;
+  margin: auto;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

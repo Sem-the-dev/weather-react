@@ -4,7 +4,7 @@ import "./Footer.css";
 export default function Footer() {
   return (
     <div className="signature">
-      <p>
+      <footer>
         {" "}
         👩🏾‍💻 Open-source code by:{" "}
         <a href="https://github.com/Sem-the-dev/weather-react">
@@ -18,7 +18,7 @@ export default function Footer() {
         <a href="https://www.pexels.com/photo/white-clouds-and-blue-sky-907485/">
           Ithalu Dominguez{" "}
         </a>
-      </p>
+      </footer>
     </div>
   );
 }

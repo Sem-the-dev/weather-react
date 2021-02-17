@@ -34,9 +34,10 @@ let[message, setMessage] = useState("")
           Last updated: Monday at 9am
         </p>
         <ReactAnimatedWeather
+        className="MainIcon"
     icon="CLEAR_DAY"
     color="gray"
-    size={200}
+    size={150}
     animate={true}
   />
       <p className="CurrentTemperature">
@@ -80,7 +81,7 @@ return (
      <label class="btn btn-outline-dark">
       <input type="radio" name="options" id="fahrenheit-bttn" autocomplete="off"/> °F
     </label>
-    <label class="btn btn-outline-dark">
+    <label className="btn btn-outline-dark">
     <input type="radio" name="options" id="celsius-bttn" autocomplete="off" checked/> °C
     </label>
      </div>
