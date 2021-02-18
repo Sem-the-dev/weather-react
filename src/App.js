@@ -3,7 +3,8 @@ import './App.css';
 import SearchTool from './SearchTool';
 import Footer from './Footer'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Loader from "react-loader-spinner";
+
+
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
           backgroundSize: "fit-content" }} >
       <SearchTool />
       
-      <Loader type="BallTriangle" color="gray" height={150} width={150} />
+     
       
       <Footer />
       </div>

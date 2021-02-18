@@ -1,9 +1,9 @@
-.searchTool .search {
+.search {
   text-align: center;
   padding: 40px;
   position: relative;
 }
-.searchTool .search-button {
+.search-button {
   padding: 0px;
   position: relative;
   text-align: left;
