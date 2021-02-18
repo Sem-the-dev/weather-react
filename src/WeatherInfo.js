@@ -2,33 +2,33 @@ import React from 'react';
 import ReactAnimatedWeather from 'react-animated-weather';
 import FormattedDate from "./FormattedDate";
 
-export default function WeatherInfo(){
+export default function WeatherInfo(props){
 return (
       <div className="WeatherInfo">
         <h1 className="City">
-          {weatherData.city}
+          {props.data.city}
         </h1>
         <h2 className="WeatherDescription text-capitalize">
-          {weatherData.description}
+          {props.data.description}
         </h2>
         <p className="LastUpdated">
-          Last updated: <FormattedDate date={weatherData.date}/>;
+          Last updated: <FormattedDate date={props.data.date}/>;
         </p>
-        <img src={weatherData.icon} alt={weatherData.description} />
+        <img src={props.data.icon} alt={props.data.description} />
       <p className="CurrentTemperature">
-       {weatherData.temperature}
+       {Math.round(props.data.temperature)}°
       </p>
       <br/>
       <p className="HighLowTemp">
-        H: {Math.round(wetherData.highTemp)}°
-        L: {Math.round(wetherData.lowTemp)}°
+        H: {Math.round(props.data.highTemp)}°
+        L: {Math.round(props.data.lowTemp)}°
       </p>
       <p className="WeatherDetails">
-        Feels like: {Math.round(weatherData.feelsLike)}°
+        Feels like: {Math.round(props.data.feelsLike)}°
         <br />
-        Windspeed: {Math.round(weatherData.windspeed)} kph or mph
+        Windspeed: {Math.round(props.data.windspeed)} mph
         <br />
-        Humidity: {Math.round(weatherData.humidity)}%
+        Humidity: {Math.round(props.data.humidity)}%
         <br/>
         Sunrise:07:00
         <br/>
