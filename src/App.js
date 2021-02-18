@@ -15,9 +15,7 @@ function App() {
           backgroundImage: "url(./images/hues-of-red-and-blue.jpg)",
           backgroundPosition: "auto",
           backgroundSize: "fit-content" }} >
-      <SearchTool />
-      
-     
+      <SearchTool defaultCity="London"/>
       
       <Footer />
       </div>

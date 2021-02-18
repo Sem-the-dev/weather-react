@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import SearchTools from './SearchTools.css';
 import Loader from "react-loader-spinner";
-
+import FormattedDate from "./FormattedDate"
 import WeatherInfo from "./WeatherInfo";
 
 export default function SearchTool(props){
@@ -26,7 +26,7 @@ export default function SearchTool(props){
       ready: true,
       city: response.data.name,
       description: response.data.weather[0].description,
-      lastUpdated: "Monday 17:00",
+      lastUpdated: new Date(response.data.dt * 1000) ,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       temperature: response.data.main.temp,
       highTemp: response.data.main.temp_max,
@@ -37,9 +37,6 @@ export default function SearchTool(props){
       sunrise: "07:00",
       sunset: "16:00",
     })
-
-    
-
 ;
 }
 
@@ -70,12 +67,11 @@ return (
      </div>
     </form>
     <WeatherInfo />
-   <div>{message}</div>
       </div> 
 )
     } else {
     let apiKey = `8d62258f1cbe410bceed597214b7bfa5`;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&units=metric&appid=${apiKey}`;
     axios.get(apiUrl).then(getWeather);
     
     return  <Loader type="BallTriangle" color="gray" height={150} width={150} />
