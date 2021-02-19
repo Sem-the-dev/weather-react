@@ -6,8 +6,32 @@ import WeatherInfo from "./WeatherInfo";
 
 
 export default function SearchTool(props){
-  const[city, setCity] = useState(props.defaultCity);
+  const [unit, setUnit] = useState("celsius");
+  const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ready: false});
+  
+  function showFahrenheit(event){
+    event.preventDefault();
+    setUnit("fahrenheit")
+}
+
+function showCelsius(event){
+    event.preventDefault();
+    setUnit("celsius")
+}
+
+  if (unit === "celsius"){
+    return (
+      Math.round(weatherData.temperature)
+    )
+   } else {
+     let fahrenheit = (weatherData.temperature * 9/5) + 32
+     return (
+       Math.round(fahrenheit)
+     )
+   };
+
+  
 
     function search(){
     let apiKey = `8d62258f1cbe410bceed597214b7bfa5`;
@@ -45,8 +69,7 @@ export default function SearchTool(props){
       sunrise: "07:00",
       sunset: "16:00",
     })
-;
-}
+};
 
     if (weatherData.ready){
 
@@ -67,10 +90,10 @@ return (
     <div className="col-2 btn-group btn-group-toggle" data-toggle="buttons">
      
      <label className="btn btn-outline-dark">
-      <input type="radio" name="options" id="fahrenheit-bttn" autoComplete="off"/> °F
+      <input type="radio" name="options" id="fahrenheit-bttn" autoComplete="off" onClick={showFahrenheit}/> °F
     </label>
     <label className="btn btn-outline-dark">
-    <input type="radio" name="options" id="celsius-bttn" autoComplete="off" /> °C
+    <input type="radio" name="options" id="celsius-bttn" autoComplete="off" onClick={showCelsius}/> °C
     </label>
      </div>
      </div>

@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactAnimatedWeather from 'react-animated-weather';
 import FormattedDate from "./FormattedDate";
-import WeatherTemperature from "./WeatherTemperature"
 
 export default function WeatherInfo(props){
 return (
@@ -13,12 +12,12 @@ return (
           {props.data.description}
         </h2>
         <p className="LastUpdated">
-          Last updated: <FormattedDate date={props.data.date}/>;
+          Last updated: <FormattedDate date={props.data.date}/>
         </p>
         <img src={props.data.icon} alt={props.data.description} />
-      
-       <WeatherTemperature celsius={props.data.temperature} />
-       
+      <p className="CurrentTemperature">
+       {Math.round(props.data.temperature)}°
+      </p>
       <br/>
       <p className="HighLowTemp">
         H: {Math.round(props.data.highTemp)}°
