@@ -4,6 +4,7 @@ import SearchTools from './SearchTools.css';
 import Loader from "react-loader-spinner";
 import WeatherInfo from "./WeatherInfo";
 
+
 export default function SearchTool(props){
   const[city, setCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ready: false});
@@ -54,22 +55,22 @@ return (
     <form onSubmit={handleSubmit}>
     <div className="row search">
     <div className="col-6">
-     <input type="search" placeholder="Type a city..." class="form-control" onChange={updateCity}/>
+     <input type="search" placeholder="Type a city..." className="form-control" onChange={updateCity}/>
     </div>
     <div className="col-2 search-button">
-     <input type="submit" value="Search" class="btn btn-outline-dark"/>
+     <input type="submit" value="Search" className="btn btn-outline-dark"/>
     </div>
 
     <div className="col-2 search-button">
-     <input type="submit" value="Here" class="btn btn-outline-dark"/>
+     <input type="submit" value="Here" className="btn btn-outline-dark"/>
     </div>
     <div className="col-2 btn-group btn-group-toggle" data-toggle="buttons">
-     <weatherTemperature celsius={weatherData.temperature} />
-     <label class="btn btn-outline-dark">
-      <input type="radio" name="options" id="fahrenheit-bttn" autocomplete="off"/> °F
+     
+     <label className="btn btn-outline-dark">
+      <input type="radio" name="options" id="fahrenheit-bttn" autoComplete="off"/> °F
     </label>
     <label className="btn btn-outline-dark">
-    <input type="radio" name="options" id="celsius-bttn" autocomplete="off" checked/> °C
+    <input type="radio" name="options" id="celsius-bttn" autoComplete="off" /> °C
     </label>
      </div>
      </div>

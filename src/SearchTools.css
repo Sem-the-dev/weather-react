@@ -45,7 +45,7 @@ input {
   margin: auto;
 }
 
-.CurrentTemperature {
+.WeatherTemperature .CurrentTemperature {
   font-size: 100px;
   text-align: center;
   font-family: "Share Tech Mono", monospace;
