@@ -30,7 +30,7 @@ return (
         <br />
         Humidity: {Math.round(props.data.humidity)}%
         <br/>
-        Sunrise:07:00
+        Sunrise: 07:00
         <br/>
         Sunset: 16:00
     </p>
