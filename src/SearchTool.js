@@ -19,18 +19,6 @@ function showCelsius(event){
     event.preventDefault();
     setUnit("celsius")
 }
-
-  if (unit === "celsius"){
-    return (
-      Math.round(weatherData.temperature)
-    )
-   } else {
-     let fahrenheit = (weatherData.temperature * 9/5) + 32
-     return (
-       Math.round(fahrenheit)
-     )
-   };
-
   
 
     function search(){
@@ -98,8 +86,8 @@ return (
      </div>
      </div>
     </form>
-    <WeatherInfo data={weatherData} />
-    <WeatherForecast city={weatherData.city}/>
+    <WeatherInfo data={weatherData} unit={unit} />
+    <WeatherForecast city={weatherData.city} />
       </div> 
 )
     } else {
