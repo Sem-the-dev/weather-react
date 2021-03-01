@@ -87,7 +87,7 @@ return (
      </div>
     </form>
     <WeatherInfo data={weatherData} unit={unit} />
-    <WeatherForecast city={weatherData.city} />
+    <WeatherForecast city={weatherData.city} unit={unit} />
       </div> 
 )
     } else {
