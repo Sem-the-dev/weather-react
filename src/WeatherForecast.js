@@ -8,7 +8,7 @@ export default function WeatherForecast(props){
   const [forecast, setForecast] = useState(null);
 
   function getForecast(response){
-    setForecast(response.data)
+    setForecast(response.forecast)
     setLoaded(true);
   };
   

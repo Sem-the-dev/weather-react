@@ -26,7 +26,7 @@ function showCelsius(event){
     event.preventDefault()
     navigator.geolocation.getCurrentPosition(checkWeatherHere);
   }
-  
+
     function search(){
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
     axios.get(apiUrl).then(getWeather);
@@ -35,8 +35,11 @@ function showCelsius(event){
     function checkWeatherHere(position){
     let hereUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=${apiKey}`;
     axios.get(hereUrl).then(getWeather);
-  
-    }
+    
+    let forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=${apiKey}`;
+    axios.get(forecastUrl).then(WeatherForecast);
+      
+  }
     
 
 
@@ -102,7 +105,7 @@ return (
      </div>
     </form>
     <WeatherInfo data={weatherData} unit={unit} />
-    <WeatherForecast city={weatherData.city} unit={unit} />
+    <WeatherForecast city={weatherData.city} unit={unit}  />
       </div> 
 )
     } else {
