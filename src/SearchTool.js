@@ -10,6 +10,8 @@ export default function SearchTool(props){
   const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ready: false});
   
+  let apiKey = `8d62258f1cbe410bceed597214b7bfa5`;
+
   function showFahrenheit(event){
     event.preventDefault();
     setUnit("fahrenheit")
@@ -20,26 +22,38 @@ function showCelsius(event){
     setUnit("celsius")
 }
   
-
+   function locateUser(event){
+    event.preventDefault()
+    navigator.geolocation.getCurrentPosition(checkWeatherHere);
+  }
+  
     function search(){
-    let apiKey = `8d62258f1cbe410bceed597214b7bfa5`;
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
     axios.get(apiUrl).then(getWeather);
     };
 
+    function checkWeatherHere(position){
+    let hereUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=${apiKey}`;
+    axios.get(hereUrl).then(getWeather);
+  
+    }
+    
+
 
     function handleSubmit(event){
     event.preventDefault();
-    };
+    search();
+  };
 
 
     function updateCity(event){
     event.preventDefault();
     setCity(event.target.value);
-    search();
+
     };
 
-    
+ 
+
     
     function getWeather(response){
     setWeatherData({
@@ -74,7 +88,7 @@ return (
     </div>
 
     <div className="col-2 search-button">
-     <input type="submit" value="Here" className="btn btn-outline-dark"/>
+     <input type="submit" value="Here" className="btn btn-outline-dark" onClick={locateUser}/>
     </div>
     <div className="col-2 btn-group btn-group-toggle" data-toggle="buttons">
      
