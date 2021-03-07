@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from 'axios';
 import ReactAnimatedWeather from "react-animated-weather";
+import WeatherIcon from './WeatherIcon'
 
 export default function WeatherForecast(props){
   const [loaded, setLoaded] = useState(false);
@@ -17,12 +18,7 @@ export default function WeatherForecast(props){
 <div className="col">
 {new Date(forecast.list[0].dt * 1000).getHours()}:00
 <br/>
-  <ReactAnimatedWeather
-    icon="CLEAR_DAY"
-    color="gray"
-    size={50}
-    animate={true}
-  />
+  <WeatherIcon code={forecast.list[0].weather[0].icon} />
 <br/>
 H:{Math.round(forecast.list[0].main.temp_max)}° 
 L:{Math.round(forecast.list[0].main.temp_min)}°
@@ -30,12 +26,7 @@ L:{Math.round(forecast.list[0].main.temp_min)}°
 <div className="col">
 {new Date(forecast.list[1].dt * 1000).getHours()}:00
 <br/>
-  <ReactAnimatedWeather
-    icon="CLEAR_DAY"
-    color="gray"
-    size={50}
-    animate={true}
-  />
+ <WeatherIcon code={forecast.list[1].weather[0].icon} />
 <br/>
 H:{Math.round(forecast.list[1].main.temp_max)}° 
 L:{Math.round(forecast.list[1].main.temp_min)}°
@@ -44,12 +35,7 @@ L:{Math.round(forecast.list[1].main.temp_min)}°
 <div className="col">
 {new Date(forecast.list[2].dt * 1000).getHours()}:00
 <br/>
-  <ReactAnimatedWeather
-    icon="CLEAR_DAY"
-    color="gray"
-    size={50}
-    animate={true}
-  />
+ <WeatherIcon code={forecast.list[2].weather[0].icon} />
 <br/>
 H:{Math.round(forecast.list[2].main.temp_max)}° 
 L:{Math.round(forecast.list[2].main.temp_min)}°
@@ -58,12 +44,7 @@ L:{Math.round(forecast.list[2].main.temp_min)}°
 <div className="col">
 {new Date(forecast.list[3].dt * 1000).getHours()}:00
 <br/>
-  <ReactAnimatedWeather
-    icon="CLEAR_DAY"
-    color="gray"
-    size={50}
-    animate={true}
-  />
+ <WeatherIcon code={forecast.list[3].weather[0].icon} />
 <br/>
 H:{Math.round(forecast.list[3].main.temp_max)}° 
 L:{Math.round(forecast.list[3].main.temp_min)}°
@@ -72,12 +53,7 @@ L:{Math.round(forecast.list[3].main.temp_min)}°
 <div className="col">
 {new Date(forecast.list[4].dt * 1000).getHours()}:00
 <br/>
-  <ReactAnimatedWeather
-    icon="CLEAR_DAY"
-    color="gray"
-    size={50}
-    animate={true}
-  />
+ <WeatherIcon code={forecast.list[4].weather[0].icon} />
 <br/>
 H:{Math.round(forecast.list[4].main.temp_max)}° 
 L:{Math.round(forecast.list[4].main.temp_min)}°
@@ -92,12 +68,7 @@ L:{Math.round(forecast.list[4].main.temp_min)}°
 <div className="col">
 {new Date(forecast.list[0].dt * 1000).getHours()}:00
 <br/>
-  <ReactAnimatedWeather
-    icon="CLEAR_DAY"
-    color="gray"
-    size={50}
-    animate={true}
-  />
+ <WeatherIcon code={forecast.list[0].weather[0].icon} />
 <br/>
 H:{Math.round(forecast.list[0].main.temp_max * 9/5) + 32}°
 L: {" "} {Math.round(forecast.list[0].main.temp_min * 9/5) + 32}°
@@ -105,12 +76,7 @@ L: {" "} {Math.round(forecast.list[0].main.temp_min * 9/5) + 32}°
 <div className="col">
 {new Date(forecast.list[1].dt * 1000).getHours()}:00
 <br/>
-  <ReactAnimatedWeather
-    icon="CLEAR_DAY"
-    color="gray"
-    size={50}
-    animate={true}
-  />
+ <WeatherIcon code={forecast.list[1].weather[0].icon} />
 <br/>
 H:{Math.round(forecast.list[1].main.temp_max * 9/5) + 32}° 
 L:{Math.round(forecast.list[1].main.temp_min * 9/5) + 32}°
@@ -119,12 +85,7 @@ L:{Math.round(forecast.list[1].main.temp_min * 9/5) + 32}°
 <div className="col">
 {new Date(forecast.list[2].dt * 1000).getHours()}:00
 <br/>
-  <ReactAnimatedWeather
-    icon="CLEAR_DAY"
-    color="gray"
-    size={50}
-    animate={true}
-  />
+ <WeatherIcon code={forecast.list[2].weather[0].icon} />
 <br/>
 H:{Math.round(forecast.list[2].main.temp_max * 9/5) + 32}° 
 L:{Math.round(forecast.list[2].main.temp_min * 9/5) + 32}°
@@ -133,12 +94,7 @@ L:{Math.round(forecast.list[2].main.temp_min * 9/5) + 32}°
 <div className="col">
 {new Date(forecast.list[3].dt * 1000).getHours()}:00
 <br/>
-  <ReactAnimatedWeather
-    icon="CLEAR_DAY"
-    color="gray"
-    size={50}
-    animate={true}
-  />
+ <WeatherIcon code={forecast.list[3].weather[0].icon} />
 <br/>
 H:{Math.round(forecast.list[3].main.temp_max * 9/5) + 32}° 
 L:{Math.round(forecast.list[3].main.temp_min * 9/5) + 32}°
@@ -147,12 +103,7 @@ L:{Math.round(forecast.list[3].main.temp_min * 9/5) + 32}°
 <div className="col">
 {new Date(forecast.list[4].dt * 1000).getHours()}:00
 <br/>
-  <ReactAnimatedWeather
-    icon="CLEAR_DAY"
-    color="gray"
-    size={50}
-    animate={true}
-  />
+ <WeatherIcon code={forecast.list[4].weather[0].icon} />
 <br/>
 H:{Math.round(forecast.list[4].main.temp_max * 9/5) + 32}° 
 L:{Math.round(forecast.list[4].main.temp_min * 9/5) + 32}°

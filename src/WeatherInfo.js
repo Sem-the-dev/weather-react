@@ -2,6 +2,7 @@ import React from "react";
 import ReactAnimatedWeather from "react-animated-weather";
 import FormattedDate from "./FormattedDate";
 import SearchTools from './SearchTools.css';
+import WeatherIcon from './WeatherIcon';
 
 export default function WeatherInfo(props){
 if (props.unit === "celsius"){
@@ -16,10 +17,11 @@ if (props.unit === "celsius"){
         <p className="LastUpdated">
           Last updated: <FormattedDate date={props.data.date}/>
         </p>
-        <img src={props.data.icon} alt={props.data.description} />
+        <WeatherIcon code={props.data.icon} alt={props.data.description} />
       <p className="CurrentTemperature">
        {Math.round(props.data.temperature)}°
       </p>
+      
       <br/>
       <p className="HighLowTemp">
         H: {Math.round(props.data.highTemp)}°
@@ -54,7 +56,9 @@ return (
         <p className="LastUpdated">
           Last updated: <FormattedDate date={props.data.date}/>
         </p>
-        <img src={props.data.icon} alt={props.data.description} />
+
+         <WeatherIcon code={props.data.icon} alt={props.data.description}/>
+       
       <p className="CurrentTemperature">
        {Math.round(fahrenheit)}°
       </p>
