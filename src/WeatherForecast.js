@@ -8,11 +8,11 @@ export default function WeatherForecast(props){
   const [forecast, setForecast] = useState(null);
 
   function getForecast(response){
-    setForecast(response.forecast)
+    setForecast(response.data)
     setLoaded(true);
   };
   
-  if (loaded && props.unit === "celsius") {
+  if (loaded && props.city === forecast.city.name && props.unit === "celsius") {
     return (
 <div className="row hourly-weather WeatherForecast">
 <div className="col">
@@ -62,7 +62,7 @@ L:{Math.round(forecast.list[4].main.temp_min)}°
 </div>     
 )
 
-} else if (loaded && props.unit === "fahrenheit") {
+} else if (loaded && props.city === forecast.city.name && props.unit === "fahrenheit") {
   return (
 <div className="row hourly-weather WeatherForecast">
 <div className="col">
