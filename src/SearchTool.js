@@ -37,7 +37,7 @@ function showCelsius(event){
     axios.get(hereUrl).then(getWeather);
     
     let forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=${apiKey}`;
-    axios.get(forecastUrl).then(WeatherForecast);
+    axios.get(forecastUrl).then(getWeather);
       
   }
     
@@ -63,9 +63,8 @@ function showCelsius(event){
       ready: true,
       city: response.data.name,
       description: response.data.weather[0].description,
-      date: new Date(response.data.dt * 1000) ,
+      date: new Date(response.data.dt * 1000),
       icon: response.data.weather[0].icon, 
-      //`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       temperature: response.data.main.temp,
       highTemp: response.data.main.temp_max,
       lowTemp: response.data.main.temp_min,
