@@ -9,16 +9,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App">
-      <div className="container">
-     <div style={{
+    <div className="App" style={{
           backgroundImage: "url(./images/hues-of-red-and-blue.jpg)",
           backgroundPosition: "auto",
-          backgroundSize: "fit-content" }} >
+          backgroundSize: "fit-content" }}>
+      <div className="container">
+    
       <SearchTool defaultCity="London"/>
       
       <Footer />
-      </div>
+  
       </div>
     </div>
   );
