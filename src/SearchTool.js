@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import SearchTools from './SearchTools.css';
+import './SearchTools.css';
 import Loader from "react-loader-spinner";
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
@@ -36,9 +36,10 @@ function showCelsius(event){
     let hereUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=${apiKey}`;
     axios.get(hereUrl).then(getWeather);
     
-    let forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=${apiKey}`;
-    axios.get(forecastUrl).then(getWeather);
-      
+    // let forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=${apiKey}`;
+    // axios.get(forecastUrl).then(getWeather);
+
+
   }
     
 
@@ -59,6 +60,7 @@ function showCelsius(event){
 
     
     function getWeather(response){
+      console.log(response.data.weather[0].description)
     setWeatherData({
       ready: true,
       city: response.data.name,
