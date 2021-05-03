@@ -46,7 +46,9 @@ function showCelsius(event){
 
     function handleSubmit(event){
     event.preventDefault();
+    setCity(" ")
     search();
+    
   };
 
 
@@ -54,13 +56,13 @@ function showCelsius(event){
     event.preventDefault();
     setCity(event.target.value);
 
+
     };
 
  
 
     
     function getWeather(response){
-      console.log(response.data.weather[0].description)
     setWeatherData({
       ready: true,
       city: response.data.name,
